@@ -1,4 +1,4 @@
-package com.bigtask.abstractClasses;
+package com.bigtask.Resource;
 
 import com.bigtask.valueObjects.Money;
 

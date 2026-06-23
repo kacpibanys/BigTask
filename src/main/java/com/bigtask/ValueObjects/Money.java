@@ -1,10 +1,10 @@
-package com.bigtask.valueObjects;
+package com.bigtask.ValueObjects;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Money {
-    BigDecimal amount;
+    private final BigDecimal amount;
 
     public Money(BigDecimal amount) {
         if (amount == null || amount.signum() < 0) {

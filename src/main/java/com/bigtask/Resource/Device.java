@@ -2,6 +2,7 @@ package com.bigtask.Resource;
 
 import com.bigtask.valueObjects.Money;
 
+
 import java.math.BigDecimal;
 
 public class Device extends Resource {

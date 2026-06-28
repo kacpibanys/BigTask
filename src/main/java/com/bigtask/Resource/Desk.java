@@ -1,27 +1,39 @@
 package com.bigtask.Resource;
 
 import com.bigtask.valueObjects.Money;
+import com.bigtask.Resource.DeskEnum;
+
+import java.math.BigDecimal;
 
 public class Desk extends Resource {
-    public enum DeskType {HOT, FIXED};
-    private String type;
+    private DeskEnum type;
 
+    protected Desk(String name, Money customHourlyRate, DeskEnum type) {
 
-    protected Desk(String name, Money customHourlyRate) {
         super(name, customHourlyRate);
+        this.type = type;
     }
 
-    protected Desk(String name) {
+    protected Desk(String name, DeskEnum type) {
+
         super(name);
+        this.type = type;
     }
 
     @Override
     protected Money baseRatePerHour() {
-        return null;
+
+        BigDecimal hourRate = new  BigDecimal("120");
+        return new Money(hourRate);
     }
 
     @Override
     public String describe() {
-        return "";
+        return String.format("Desk '%s' - Type: %s", getName(), getType());
+    }
+
+
+    public DeskEnum getType() {
+        return type;
     }
 }

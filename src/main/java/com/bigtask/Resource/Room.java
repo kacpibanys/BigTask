@@ -16,9 +16,14 @@ public class Room extends Resource {
         this.equipment = equipment;
     }
 
-    protected Room(String name) {
+    protected Room(String name, int seats, Set<String> equipment) {
         super(name);
+
+        this.seats = seats;
+        this.equipment = equipment;
     }
+
+
 
     @Override
     protected Money baseRatePerHour() {
@@ -29,7 +34,7 @@ public class Room extends Resource {
 
     @Override
     public String describe() {
-        return String.format("Sala '%s' - Miejsc: %d, Sprzęt: %s", getName(), seats, String.join(", ", equipment));
+        return String.format("Room '%s' - Seats: %d, Equipment: %s", getName(), seats, String.join(", ", equipment));
     }
 
     public int getSeats() {

@@ -4,7 +4,7 @@ import com.bigtask.valueObjects.Money;
 
 public abstract class Resource {
     private final String name;
-    private Money customHourlyRate;
+    Money customHourlyRate;
 
     protected Resource(String name, Money customHourlyRate) {
         if (name == null || name.isEmpty()) {

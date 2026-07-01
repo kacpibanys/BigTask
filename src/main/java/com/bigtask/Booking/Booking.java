@@ -45,7 +45,29 @@ public class Booking {
     }
 
     public LocalDateTime getStart() {
+
         return start;
     }
+
+    public LocalDateTime getEnd() {
+        return end;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Money getCalculatedPrice() {
+        return calculatedPrice;
+    }
+
+    public Resource getResource() {
+        return resource;
+    }
+
 
 }

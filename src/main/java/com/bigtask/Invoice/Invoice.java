@@ -33,8 +33,6 @@ public class Invoice implements Billable{
                 booking.getStart().toString(),
                 booking.getEnd().toString()
         );
-
-        // Zwracamy nowiutki, gotowy obiekt faktury
         return new Invoice(invoiceNumber, issuedDate, buyer, total, description);
     }
 }

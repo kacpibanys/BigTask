@@ -6,7 +6,7 @@ import com.bigtask.valueObjects.Money;
 
 import java.time.LocalDateTime;
 
-public class Invoice implements Billable{
+public class Invoice{
     private String invoiceNumber;
     private LocalDateTime issueDate;
     private User buyer;
@@ -19,6 +19,31 @@ public class Invoice implements Billable{
         this.buyer = buyer;
         this.total = total;
         this.itemDescription = itemDescription;
+    }
+
+    public String getInvoiceNumber() {
+        return invoiceNumber;
+    }
+
+    public LocalDateTime getIssueDate() {
+        return issueDate;
+    }
+
+    public User getBuyer() {
+        return buyer;
+    }
+
+    public Money getTotal() {
+        return total;
+    }
+
+    public String getItemDescription() {
+        return itemDescription;
+    }
+
+    @Override
+    public String toString() {
+        return "Faktura: " + invoiceNumber + " | Dla: " + buyer.getDisplayName() + " | Kwota: " + total + " | " + itemDescription;
     }
 
     @Override

@@ -16,4 +16,9 @@ public class CompanyUser extends User{
         this.companyName = companyName;
         this.taxId = taxId;
     }
+
+    @Override
+    public String toString() {
+        return "[COMPANY] " + super.toString() + " companyName: " + this.companyName + " NIP: " + this.taxId;
+    }
 }

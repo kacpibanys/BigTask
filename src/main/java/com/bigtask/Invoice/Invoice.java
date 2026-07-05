@@ -43,23 +43,8 @@ public class Invoice{
 
     @Override
     public String toString() {
-        return "Faktura: " + invoiceNumber + " | Dla: " + buyer.getDisplayName() + " | Kwota: " + total + " | " + itemDescription;
+        return "Invoice: " + invoiceNumber + " | for: " + buyer.getDisplayName() + " | amount: " + total + " | " + itemDescription;
     }
 
-    @Override
-    public Invoice toInvoice(Booking booking) {
-        String invoiceNumber = "FV/" + booking.getId();
 
-        LocalDateTime issuedDate = LocalDateTime.now();
-        User buyer = booking.getUser();
-        Money total = booking.getCalculatedPrice();
-        String description = String.format("Rezerwacja %s %s-%s",
-                booking.getResource().getName(),
-                booking.getStart().toString(),
-                booking.getEnd().toString()
-        );
-
-        // Zwracamy nowiutki, gotowy obiekt faktury
-        return new Invoice(invoiceNumber, issuedDate, buyer, total, description);
-    }
 }

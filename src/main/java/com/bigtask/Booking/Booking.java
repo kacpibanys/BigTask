@@ -90,4 +90,8 @@ public class Booking {
     public void setStatus(BookingStatus status) {
         this.status = status;
     }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
 }

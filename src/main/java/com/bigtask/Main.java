@@ -3,6 +3,7 @@ package com.bigtask;
 import com.bigtask.Booking.Booking;
 import com.bigtask.Booking.BookingStatus;
 import com.bigtask.PricingPolicy.PricingPolicy;
+import com.bigtask.PricingPolicy.StandardPricing;
 import com.bigtask.Resource.Resource;
 import com.bigtask.User.User;
 import com.bigtask.valueObjects.Money;
@@ -31,11 +32,12 @@ public class Main  {
             }
         };
         BookingStatus bookingStatus = PENDING;
-        Booking newBooking = new Booking("id", user, resource , startTime, endTime, bookingStatus,  money);
+        Booking newBooking = new Booking("id", user, resource , startTime, endTime, bookingStatus,  money, null);
         //System.out.println(newBooking.getHourlyRate().getAmount());
         //Money hourlyRate = newBooking.getHourlyRate();
         //System.out.println(hourlyRate.getAmount());
         Money newMoney = new Money(new BigDecimal("10.00") );
+        //Money base = new PricingPolicy.price(newBooking);
 
         //System.out.println(PricingPolicy.price(newBooking).getAmount());
     }

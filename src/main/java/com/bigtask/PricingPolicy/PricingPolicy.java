@@ -5,5 +5,5 @@ import com.bigtask.valueObjects.Money;
 
 
 public interface PricingPolicy {
-      Money price(Booking booking);
+    Money price(Booking booking);
 }

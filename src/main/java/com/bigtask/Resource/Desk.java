@@ -23,7 +23,7 @@ public class Desk extends Resource {
     @Override
     protected Money baseRatePerHour() {
 
-        BigDecimal hourRate = new  BigDecimal("120");
+        BigDecimal hourRate = new BigDecimal("120");
         return new Money(hourRate);
     }
 

@@ -9,14 +9,14 @@ public class Room extends Resource {
     private int seats;
     private Set<String> equipment;
 
-    protected Room(String name, Money customHourlyRate, int seats, Set<String> equipment) {
+    public Room(String name, Money customHourlyRate, int seats, Set<String> equipment) {
         super(name, customHourlyRate);
 
         this.seats = seats;
         this.equipment = equipment;
     }
 
-    protected Room(String name, int seats, Set<String> equipment) {
+    public Room(String name, int seats, Set<String> equipment) {
         super(name);
 
         this.seats = seats;

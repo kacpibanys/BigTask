@@ -87,6 +87,10 @@ public class Booking {
         this.calculatedPrice = calculatedPrice;
     }
 
+    public void setPayment(Payment payment) {
+        this.payment = payment;
+    }
+
     public void setStatus(BookingStatus status) {
         this.status = status;
     }

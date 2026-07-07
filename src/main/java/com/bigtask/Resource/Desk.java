@@ -8,7 +8,7 @@ import java.math.BigDecimal;
 public class Desk extends Resource {
     private DeskEnum type;
 
-    protected Desk(String name, Money customHourlyRate, DeskEnum type) {
+    public Desk(String name, Money customHourlyRate, DeskEnum type) {
 
         super(name, customHourlyRate);
         this.type = type;

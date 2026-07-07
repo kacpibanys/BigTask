@@ -20,7 +20,7 @@ public class BookingService {
     private final UserRepository userRepository;
     private final BookingRepository bookingRepository;
     private final ResourceRepository resourceRepository;
-    private final PricingPolicy pricingPolicy;
+    private PricingPolicy pricingPolicy;
 
     public BookingService(UserRepository userRepository, BookingRepository bookingRepository, ResourceRepository resourceRepository, PricingPolicy pricingPolicy) {
         this.userRepository = userRepository;
@@ -29,13 +29,13 @@ public class BookingService {
         this.pricingPolicy = pricingPolicy;
     }
 
-    Booking book(User user, Resource resource, LocalDateTime start, int duartionMinutes) {
+    public Booking book(User user, Resource resource, LocalDateTime start, int duartionMinutes) {
         LocalDateTime end = start.plusMinutes(duartionMinutes);
 
         return this.book(user, resource, start, end);
     }
 
-    Booking book(User user, Resource resource, LocalDateTime start, LocalDateTime end) {
+    public Booking book(User user, Resource resource, LocalDateTime start, LocalDateTime end) {
         if (!end.isAfter(start)) {
             throw new IllegalArgumentException("Start date must be after end date");
         }
@@ -125,5 +125,9 @@ public class BookingService {
                 .filter(booking -> resourceFilter == null || booking.getResource().getName().equals(resourceFilter.getName()))
                 .filter(booking -> bookingStatusFilter == null || booking.getStatus() == bookingStatusFilter)
                 .collect(Collectors.toList());
+    }
+
+    public void setPricingPolicy(PricingPolicy pricingPolicy) {
+        this.pricingPolicy = pricingPolicy;
     }
 }

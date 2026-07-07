@@ -35,4 +35,18 @@ public class Invoice implements Billable{
         );
         return new Invoice(invoiceNumber, issuedDate, buyer, total, description);
     }
+
+    @Override
+    public String toString() {
+        String buyerInfo = (buyer != null) ? buyer.getEmail() : "Unknown";
+        String totalInfo = (total != null) ? total.toString() : "0.00";
+
+        return String.format("Invoice No: %s | Date: %s | Buyer: %s | Total: %s | Desc: %s",
+                invoiceNumber,
+                issueDate,
+                buyerInfo,
+                totalInfo,
+                itemDescription
+        );
+    }
 }

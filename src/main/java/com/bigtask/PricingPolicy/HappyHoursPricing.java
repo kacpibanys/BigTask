@@ -29,5 +29,4 @@ public class HappyHoursPricing implements PricingPolicy {
 
         return new Money(totalPrice);
     }
-
 }

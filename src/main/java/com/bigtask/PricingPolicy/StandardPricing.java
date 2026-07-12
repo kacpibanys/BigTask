@@ -20,7 +20,6 @@ public class StandardPricing implements PricingPolicy {
         BigDecimal totalPrice = pricePerMinute.multiply(new BigDecimal(minutes));
         totalPrice = totalPrice.setScale(2, RoundingMode.HALF_UP);
 
-
         return new Money(totalPrice);
     }
 }

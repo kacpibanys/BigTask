@@ -39,8 +39,6 @@ public class Booking {
         this.status = status;
         this.calculatedPrice = calculatedPrice;
         this.payment = payment;
-
-
     }
 
     public Money getHourlyRate() {
@@ -77,10 +75,6 @@ public class Booking {
 
     public BookingStatus getStatus() {
         return status;
-    }
-
-    public Payment getPayment() {
-        return payment;
     }
 
     public void setCalculatedPrice(Money calculatedPrice) {

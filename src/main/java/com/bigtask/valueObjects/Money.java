@@ -4,14 +4,13 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Money {
-    BigDecimal amount;
+    private final BigDecimal amount;
 
     public Money(BigDecimal amount) {
         if (amount == null || amount.signum() < 0) {
             throw new IllegalArgumentException("Amount cannot be negative");
         }
-        this.amount = amount;
-        this.amount.setScale(2, RoundingMode.HALF_UP);
+        this.amount = amount.setScale(2, RoundingMode.HALF_UP);
     }
 
     public BigDecimal getAmount() {
@@ -40,4 +39,8 @@ public class Money {
         return new Money(this.amount.multiply(multiplier));
     }
 
+    @Override
+    public String toString() {
+        return amount.toString();
+    }
 }
